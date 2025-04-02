@@ -1,0 +1,18 @@
+# SQLite database
+scores.db
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Virtual environments (optional)
+venv/
+.env/
+
+# IntelliJ project settings
+.idea/
+shelf/
+workspace.xml
+httpRequests/
+dataSources/
+dataSources.local.xml

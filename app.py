@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-DATABASE = 'scores.db'
+DATABASE = '/data/scores.db'
 
 def init_db():
     # Create the database and table if they do not exist.
