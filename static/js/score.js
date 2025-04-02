@@ -7,7 +7,7 @@ function getQueryParam(param) {
 let score = getQueryParam('score');
 let message = getQueryParam("message");
 
-document.getElementById('scoreDisplay').innerText = 'Your Purdue Purity Score is: ' + score;
+document.getElementById('scoreDisplay').innerText = 'Your Boiler Purity Score is: ' + score;
 document.getElementById("finalMessage").innerText = message;
 
 // Function to go back to the quiz page
