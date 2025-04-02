@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Purdue Purity Score</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("Background.png");
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #003366;
+        }
+        p {
+            font-size: 20px;
+            color: #003366;
+        }
+        button {
+            background-color: #003366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0055a5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Your Purdue Purity Score</h1>
+    <p id="scoreDisplay"></p>
+    <button onclick="goBack()">Go Back</button>
+</div>
+<script>
+    // Function to retrieve a query parameter from the URL
+    function getQueryParam(param) {
+        let params = new URLSearchParams(window.location.search);
+        return params.get(param);
+    }
+    // Get the score from the URL and display it
+    let score = getQueryParam('score');
+    document.getElementById('scoreDisplay').innerText = 'Your Purdue Purity Score is: ' + score;
+
+    // Function to go back to the quiz page
+    function goBack() {
+        window.location.href = "test.html";
+    }
+</script>
+</body>
+</html>
