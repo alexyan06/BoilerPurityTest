@@ -62,7 +62,7 @@ def get_scores():
     return jsonify(rows)
 
 if __name__ == '__main__':
-    # Run the Flask app with debugging enabled.
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render sets this dynamically
+    app.run(host='0.0.0.0', port=port)
 
 
