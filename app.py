@@ -61,16 +61,6 @@ def get_scores():
     conn.close()
     return jsonify(rows)
 
-@app.route('/reset-db')
-def reset_db():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute('DELETE FROM scores')  # deletes all rows
-    conn.commit()
-    conn.close()
-    return 'Database has been cleared!'
-
-
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Render sets this dynamically
     app.run(host='0.0.0.0', port=port)
