@@ -4,7 +4,11 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-DATABASE = '/data/scores.db'
+
+if os.environ.get("RENDER"):
+    DATABASE = '/data/scores.db'  # On Render's persistent disk
+else:
+    DATABASE = 'scores.db'        # Local fallback
 
 def init_db():
     # Create the database and table if they do not exist.
