@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boiler Purity Test</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+  <h1>Boiler Purity Test</h1>
+  <p>Answer the following questions honestly. Each "Yes" answer subtracts points from your purity score!</p>
+  <p></p>
+  <small><strong>Do not attempt to finish every item on this list, we do not condone any illegal activities.</strong></small>
+  <small><strong>This website is not affiliated with Purdue </strong></small>
+  <form id="purityForm">
+    <ol id="questionList"></ol>
+    <button type="button" onclick="calculateScore()">Submit</button>
+  </form>
+  <div id="result"></div>
+</div>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
