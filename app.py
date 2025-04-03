@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import sqlite3
 from datetime import datetime
 import os
+import glob
 
 app = Flask(__name__)
 
@@ -62,8 +63,18 @@ def get_scores():
     conn.close()
     return jsonify(rows)
 
+@app.route('/data-files')
+def list_data_files():
+    import glob
+    files = glob.glob('static/data/*.json')
+    files = [f.replace('static/', '') for f in files]
+    return jsonify(sorted(files))
+
+
+@app.route('/chart')
+def chart_page():
+    return render_template('chart.html')
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Render sets this dynamically
     app.run(host='0.0.0.0', port=port)
-
-

@@ -16,3 +16,6 @@ workspace.xml
 httpRequests/
 dataSources/
 dataSources.local.xml
+
+# Backup logs
+/BoilerPurityTestScoreKeeper/scores_backups
